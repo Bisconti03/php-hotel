@@ -41,6 +41,12 @@ $hotels = [
 ];
 
 
+// foreach ($hotels as $hotel) {
+//     var_dump($hotel);
+    
+// }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +58,40 @@ $hotels = [
     <title>php Hotels</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
-<body>
+<body class="bg-success">
+    <h1 class="text-dark py-4 text-center fw-bold ">PHP Hotels</h1>
+    <div class="container">
+        <div class="row">
+            <?php
+            foreach ($hotels as $hotel) {
+            ?>
+            
+            <table class="table text-black
+            table-bordered text-center m-3
+            table-success">
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Descrizione</th>
+                        <th scope="col">Voto</th>
+                        <th scope="col">Distanza</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <td><?php echo $hotel['name'] ?></td>
+                        <td><?php echo $hotel['description'] ?></td>
+                        <td><?php echo $hotel['vote'] ?> / 10</td>
+                        <td><?php echo $hotel['distance_to_center'] ?> km</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <?php
+            } 
+            ?>
+        </div>
     
+    </div>
 </body>
 </html>
